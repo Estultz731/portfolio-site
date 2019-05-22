@@ -12,6 +12,8 @@ import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import { darken } from 'polished';
 
+require('particles.js')
+
 const AboveFold = styled.div`
   ${Mixins.aboveFoldMixin}
   padding: 140px 0 60px 0;
@@ -125,6 +127,9 @@ class Homepage extends React.Component {
     openHireMePopup: false
   };
 
+  componentDidMount() {
+    window.particlesJS.load('particles-js', 'assets/particles.json')
+  }
   handleRequestDemoClose = () => {
     this.setState({
       openHireMePopup: false
@@ -135,6 +140,7 @@ class Homepage extends React.Component {
     this.setState({
       openHireMePopup: true
     });
+
   };
 
   render() {
@@ -146,24 +152,32 @@ class Homepage extends React.Component {
           <AboveFold>
             <Img fluid={data.avatarHomepage.childImageSharp.fluid} alt="Name Surname" className="avatar" />
             <t.H1 primary align="center">
-              Name Surname
+              Elizabeth Stultz
             </t.H1>
             <t.LargeP align="center" max45>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Hello! My name is Elizabeth. You can call me Elizabeth for short. I'm a junior web developer
+            from Louisville, KY. My interests include: html, css, flexbox, css grid, styled components, and design.
+            I have a passion for growing my skill set and have worked primarily on React projects. I'm very excited to meet you!
             </t.LargeP>
             <HireMe large onClick={this.openContactPopup} book>
               Hire me
             </HireMe>
           </AboveFold>
           <Content>
+            <div id="particles-js" styles={{maxHeight: "100px", width: "100%"}} />
             <t.H2 primary align="center" bold>
-              Lorem ipsum
+              Changing Lanes
             </t.H2>
             <t.P align="center" max70 className="who-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Having graduated with a B.A. in Psychology from the University of Louisville
+            in 2011, I initially pursued a career in childcare. Though I enjoyed my time
+            working with children, I rediscovered an interest in web design that first
+            developed in middle school. Though the landscape of web development has changed,
+            I am nonetheless excited to pursue an early passion of mine. I would love to work 
+            with you!
             </t.P>
             <t.H2 primary align="center" bold className="portfolio">
-              Portfolio
+              Projects
             </t.H2>
           </Content>
           <Block>

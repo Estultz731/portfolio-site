@@ -84,10 +84,15 @@ class AboutMe extends React.Component {
         <Layout theme="white" openContactPopup={this.openContactPopup}>
           <AboveFold>
             <t.H1 green align="center">
-              Name Surname - Lorem ipsum
+              Elizabeth Stultz - Junior Developer
             </t.H1>
             <t.LargeP align="center" max70>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            So, I guess this is that part where I tell you what you want to hear.
+            I spend an inordinate amount of time reading. Like, way more than I probably should.
+            Ever the quintessential nerd, I like Dr. Who, Harry Potter, and comic books (especially DC and indie comics).
+            I also love the horror genre. On any given day you may catch me watching Hellraiser, reading a Stephen King book,
+            or designing horror themed shirts, bags, etc. All that aside, I love learning, and building new things - especially
+            on the web!
             </t.LargeP>
           </AboveFold>
           <Content>

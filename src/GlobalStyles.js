@@ -63,6 +63,11 @@ const GlobalStyles = createGlobalStyle`
       left: 100%;
     }
   }
+  .particles-js-canvas-el {
+    height: 100px;
+    max-height:100px;
+    width:100%;
+  }
 `;
 
 export default GlobalStyles;
