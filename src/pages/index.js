@@ -5,7 +5,7 @@ import * as t from '../Typography';
 import Layout, { Content } from '../components/Layout';
 import Calculator from '../images/Calculator.png';
 import Weather from '../images/Weather.png';
-import { HireMe, LinkButton } from '../components/Button.js';
+import { HireMe, LinkButton, Button } from '../components/Button.js';
 import HireMePopup from '../components/HireMePopup.js';
 import { media } from '../MediaQueries';
 import Colors from '../Colors';
@@ -146,6 +146,7 @@ class Homepage extends React.Component {
   render() {
     const { openHireMePopup } = this.state;
     const { data } = this.props;
+    console.log(this.props);
     return (
       <HomepageWrapper>
         <Layout theme="white" bigFooter openContactPopup={this.openContactPopup}>
@@ -178,6 +179,18 @@ class Homepage extends React.Component {
             <t.H2 primary align="center" bold className="portfolio">
               Projects
             </t.H2>
+            <t.P align="center">
+              <Button
+                theme={'white'}
+                primary
+                bold
+                as="a"
+                target="_blank"
+                href="https://github.com/Estultz731?tab=repositories"
+              >
+                My Github
+              </Button>
+            </t.P>
           </Content>
           <Block>
             <BlockContent>
@@ -225,13 +238,6 @@ class Homepage extends React.Component {
               </DivWrapper>
             </BlockContent>
           </Block>
-          <WorkWithMe>
-            <t.H1 green>Get in touch with me</t.H1>
-            <t.LargeP>Fancy working with me? Contact me for more info! </t.LargeP>
-            <HireMe onClick={this.openContactPopup} book>
-              Contact me
-            </HireMe>
-          </WorkWithMe>
         </Layout>
         <HireMePopup open={openHireMePopup} handleClose={this.handleRequestDemoClose} />
       </HomepageWrapper>
