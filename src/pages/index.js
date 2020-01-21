@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import * as Mixins from '../Mixins';
 import * as t from '../Typography';
 import Layout, { Content } from '../components/Layout';
-import Placeholder from '../images/placeholder.png';
+import Calculator from '../images/Calculator.png';
+import Weather from '../images/Weather.png';
 import { HireMe, LinkButton } from '../components/Button.js';
 import HireMePopup from '../components/HireMePopup.js';
 import { media } from '../MediaQueries';
@@ -12,7 +13,7 @@ import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import { darken } from 'polished';
 
-require('particles.js')
+require('particles.js');
 
 const AboveFold = styled.div`
   ${Mixins.aboveFoldMixin}
@@ -128,7 +129,7 @@ class Homepage extends React.Component {
   };
 
   componentDidMount() {
-    window.particlesJS.load('particles-js', 'assets/particles.json')
+    window.particlesJS.load('particles-js', 'assets/particles.json');
   }
   handleRequestDemoClose = () => {
     this.setState({
@@ -140,7 +141,6 @@ class Homepage extends React.Component {
     this.setState({
       openHireMePopup: true
     });
-
   };
 
   render() {
@@ -155,26 +155,25 @@ class Homepage extends React.Component {
               Elizabeth Stultz
             </t.H1>
             <t.LargeP align="center" max45>
-            Hello! My name is Elizabeth. You can call me Elizabeth for short. I'm a junior web developer
-            from Louisville, KY. My interests include: html, css, flexbox, css grid, styled components, and design.
-            I have a passion for growing my skill set and have worked primarily on React projects. I'm very excited to meet you!
+              Hello! My name is Elizabeth. You can call me Elizabeth for short. I'm a junior web developer from
+              Louisville, KY. My interests include: html, css, flexbox, css grid, styled components, and design. I have
+              a passion for growing my skill set and have worked primarily on React projects. I'm very excited to meet
+              you!
             </t.LargeP>
             <HireMe large onClick={this.openContactPopup} book>
               Hire me
             </HireMe>
           </AboveFold>
           <Content>
-            <div id="particles-js" styles={{maxHeight: "100px", width: "100%"}} />
+            <div id="particles-js" styles={{ maxHeight: '100px', width: '100%' }} />
             <t.H2 primary align="center" bold>
               Changing Lanes
             </t.H2>
             <t.P align="center" max70 className="who-desc">
-            Having graduated with a B.A. in Psychology from the University of Louisville
-            in 2011, I initially pursued a career in childcare. Though I enjoyed my time
-            working with children, I rediscovered an interest in web design that first
-            developed in middle school. Though the landscape of web development has changed,
-            I am nonetheless excited to pursue an early passion of mine. I would love to work 
-            with you!
+              Having graduated with a B.A. in Psychology from the University of Louisville in 2011, I initially pursued
+              a career in childcare. Though I enjoyed my time working with children, I rediscovered an interest in web
+              design that first developed in middle school. Though the landscape of web development has changed, I am
+              nonetheless excited to pursue an early passion of mine. I would love to work with you!
             </t.P>
             <t.H2 primary align="center" bold className="portfolio">
               Projects
@@ -183,76 +182,52 @@ class Homepage extends React.Component {
           <Block>
             <BlockContent>
               <DivWrapper>
-                <ItemImage src={Placeholder} alt="Placeholder title" />
+                <LinkButton
+                  primary
+                  bold
+                  className="link"
+                  as="a"
+                  target="_blank"
+                  href="https://kind-joliot-231c46.netlify.com/"
+                >
+                  <ItemImage src={Calculator} alt="Placeholder title" />
+                </LinkButton>
               </DivWrapper>
               <DivWrapper>
-                <t.H2 bold>Placeholder website</t.H2>
-                <t.P>Lorem ipsum</t.P>
-                <t.P>Dolor sit amet</t.P>
-                <LinkButton primary bold className="link" as="a"
-                  target="_blank"
-                  href="#">
-                  Lorem ipsum
-                </LinkButton>
+                <t.H2 primary align="center" bold>
+                  Calculator App
+                </t.H2>
+                <t.P>Made using React with React hooks.</t.P>
               </DivWrapper>
             </BlockContent>
           </Block>
           <Block>
             <BlockContent>
               <DivWrapper>
-                <t.H2 bold>Placeholder website</t.H2>
-                <t.P>Lorem ipsum</t.P>
-                <t.P>Dolor sit amet</t.P>
-                <LinkButton primary bold className="link" as="a"
+                <t.H2 primary align="center" bold>
+                  Weather App
+                </t.H2>
+                <t.P primary align="center">
+                  Made using React.
+                </t.P>
+              </DivWrapper>
+              <DivWrapper>
+                <LinkButton
+                  primary
+                  bold
+                  className="link"
+                  as="a"
                   target="_blank"
-                  href="#">
-                  Lorem ipsum
+                  href="https://dazzling-kalam-1869e5.netlify.com/"
+                >
+                  <ItemImage src={Weather} alt="Placeholder title" />
                 </LinkButton>
-              </DivWrapper>
-              <DivWrapper>
-                <ItemImage src={Placeholder} alt="Placeholder title" />
-              </DivWrapper>
-            </BlockContent>
-          </Block>
-          <Block>
-            <BlockContent>
-              <DivWrapper>
-                <ItemImage src={Placeholder} alt="Placeholder title" />
-              </DivWrapper>
-              <DivWrapper>
-                <t.H2 bold>Placeholder website</t.H2>
-                <t.P>Lorem ipsum</t.P>
-                <t.P>Dolor sit amet</t.P>
-                <LinkButton primary bold className="link" as="a"
-                  target="_blank"
-                  href="#">
-                  Lorem ipsum
-                </LinkButton>
-              </DivWrapper>
-            </BlockContent>
-          </Block>
-          <Block>
-            <BlockContent>
-              <DivWrapper>
-                <t.H2 bold>Placeholder website</t.H2>
-                <t.P>Lorem ipsum</t.P>
-                <t.P>Dolor sit amet</t.P>
-                <LinkButton primary bold className="link" as="a"
-                  target="_blank"
-                  href="#">
-                  Lorem ipsum
-                </LinkButton>
-              </DivWrapper>
-              <DivWrapper>
-                <ItemImage src={Placeholder} alt="Placeholder title" />
               </DivWrapper>
             </BlockContent>
           </Block>
           <WorkWithMe>
             <t.H1 green>Get in touch with me</t.H1>
-            <t.LargeP>
-              Fancy working with me? Contact me for more info!{' '}
-            </t.LargeP>
+            <t.LargeP>Fancy working with me? Contact me for more info! </t.LargeP>
             <HireMe onClick={this.openContactPopup} book>
               Contact me
             </HireMe>
