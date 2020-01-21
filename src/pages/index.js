@@ -13,7 +13,9 @@ import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import { darken } from 'polished';
 
-require('particles.js');
+if (typeof window !== 'undefined') {
+  require('particles.js');
+}
 
 const AboveFold = styled.div`
   ${Mixins.aboveFoldMixin}
@@ -129,7 +131,9 @@ class Homepage extends React.Component {
   };
 
   componentDidMount() {
-    window.particlesJS.load('particles-js', 'assets/particles.json');
+    if (typeof window !== 'undefined') {
+      window.particlesJS.load('particles-js', 'assets/particles.json');
+    }
   }
   handleRequestDemoClose = () => {
     this.setState({
